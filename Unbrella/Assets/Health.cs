@@ -17,4 +17,9 @@ public class Health : MonoBehaviour {
 		health -= damage;
 		textObject.text = "Health: " + health.ToString();
 	}
+	
+	
+	void OnParticleCollision(GameObject other) {
+		TakeDamage (2);
+	}
 }

@@ -29,7 +29,7 @@ public class Umbrain : MonoBehaviour {
 		Vector3 spawnPoint = new Vector3();
 		float x = Random.Range(0, mapMatrixX) - mapMatrixX/2;
 		float y = Random.Range(0, mapMatrixY) - mapMatrixY/2;
-		Debug.Log("x: "+x + "      y: "+y);
+//		Debug.Log("x: "+x + "      y: "+y);
 		spawnPoint = new Vector3(x, 0, y);
 		spawnPoint = spawnPoint*5;
 		return spawnPoint;
