@@ -11,6 +11,8 @@ public class Health : MonoBehaviour {
 	public ParticleSystem part;
 	public ParticleCollisionEvent[] collisionEvents;
 
+	public Transform rain;
+
 	// Use this for initialization
 	void Start () {
 		healthText = GameObject.Find("HealthText");
@@ -38,8 +40,7 @@ public class Health : MonoBehaviour {
 		int i = 0;
 		while (i < numCollisionEvents) {
 			Vector3 pos = collisionEvents[i].intersection;
-			Debug.Log(pos);
-
+			GameObject.Instantiate(rain, pos, new Quaternion());
 			i++;
 		}
 		
