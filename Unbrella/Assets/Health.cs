@@ -11,6 +11,9 @@ public class Health : MonoBehaviour {
 	public ParticleSystem part;
 	public ParticleCollisionEvent[] collisionEvents;
 
+	public AudioSource grojikas;
+	public AudioClip garsukas;
+
 	public Transform rain;
 
 	// Use this for initialization
@@ -26,7 +29,8 @@ public class Health : MonoBehaviour {
 	void TakeDamage(int damage) {
 		if (Time.time < lastHitTime + 1)
 			return;
-		
+
+		grojikas.PlayOneShot (garsukas);
 		health -= damage;
 		textObject.text = "Health: " + health.ToString();
 		lastHitTime = Time.time;
