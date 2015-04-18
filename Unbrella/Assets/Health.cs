@@ -48,6 +48,6 @@ public class Health : MonoBehaviour {
 			i++;
 		}
 		
-		TakeDamage (2);
+		TakeDamage (5+SceneChange.sceneInstanceCount*10);
 	}
 }
