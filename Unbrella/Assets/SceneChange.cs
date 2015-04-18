@@ -13,7 +13,7 @@ public class SceneChange : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Score.ScoreGathered > 100){
+		if(Score.ScoreGathered > 1000){
 			animBcgkImg = GameObject.Find("Canvas").transform.FindChild("Animation Bckg").gameObject;
 			animBcgkImg.SetActive(true);
 			waitCounter+=Time.deltaTime;
