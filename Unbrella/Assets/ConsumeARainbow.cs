@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ConsumeARainbow : MonoBehaviour {
 	RainbowManager rainbowMng;
+	GameObject rainbowCOnsumeFx;
+
 	void Start () {
 		GameObject dumpFolder = GameObject.Find("Buildings");
 		dumpFolder = dumpFolder.transform.FindChild("Drains").gameObject;
@@ -14,15 +16,15 @@ public class ConsumeARainbow : MonoBehaviour {
 	}
 	void OnTriggerEnter( Collider col){
 		if(col.gameObject.layer==8){
+			col.gameObject.layer=0;
 			rainbowMng.aDumpIsActive = false;
 			GameObject colHit = col.gameObject;
-			GameObject basePoint = colHit.transform.parent.gameObject;
-			basePoint.transform.parent = gameObject.transform;
-			basePoint.transform.localPosition = new Vector3();
-			Animator anim = basePoint.GetComponent<Animator>();
+			colHit.transform.parent = gameObject.transform;
+			colHit.transform.localPosition = new Vector3();
+			Animator anim = colHit.GetComponent<Animator>();
 			anim.SetBool("Consume", true);
-			Destroy(basePoint, 10f);
-			Score.ScoreGathered+=Random.Range(100, 500);
+			Destroy(colHit, 2f);
+			Score.ScoreGathered+=Random.Range(350, 450);
 		}
 	}
 
