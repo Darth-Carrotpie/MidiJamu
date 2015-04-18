@@ -4,6 +4,7 @@ using System.Collections;
 public class SceneChange : MonoBehaviour {
 	public static int sceneInstanceCount;
 	GameObject animBcgkImg;
+	GameObject looseBckg;
 	float waitCounter;
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,17 @@ public class SceneChange : MonoBehaviour {
 			waitCounter=0f;
 			Application.LoadLevel("MainScene");
 			sceneInstanceCount++;
+
+	}
+
+		if(Health.health<=0)
+		{
+			looseBckg = GameObject.Find("Canvas").transform.FindChild("Loose bckg").gameObject;
+
+			looseBckg.SetActive(true);
 		}
+	}
+	public void goToMainMeniu(){
+		Application.LoadLevel("Menu");
 	}
 }

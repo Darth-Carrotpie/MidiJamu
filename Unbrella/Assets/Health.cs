@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour {
 	GameObject healthText;
 	Text textObject;
-	int health = 100;
+	public static int health = 100;
 	float lastHitTime = 0;
 
 	public ParticleSystem part;
