@@ -15,7 +15,8 @@ public class ConsumeARainbow : MonoBehaviour {
 	void OnTriggerEnter( Collider col){
 		rainbowMng.aDumpIsActive = false;
 		GameObject colHit = col.gameObject;
-		Destroy(colHit);
+		colHit.transform.parent = gameObject.transform;
+		Destroy(colHit, 10f);
 		Score.ScoreGathered+=Random.Range(100, 500);
 	}
 
