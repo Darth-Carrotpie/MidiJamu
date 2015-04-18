@@ -15,9 +15,9 @@ public class Health : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		healthText = GameObject.Find("HealthText");
+		healthText = GameObject.Find("Health Number");
 		textObject = healthText.GetComponent<Text>();
-		textObject.text = "Health: " + health.ToString();
+		textObject.text = "Tear Capacity: " + health.ToString();
 
 		part = GameObject.Find("Particle System").GetComponent<ParticleSystem> ();
 		collisionEvents = new ParticleCollisionEvent[8];

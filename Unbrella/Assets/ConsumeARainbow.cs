@@ -16,7 +16,7 @@ public class ConsumeARainbow : MonoBehaviour {
 		rainbowMng.aDumpIsActive = false;
 		GameObject colHit = col.gameObject;
 		Destroy(colHit);
-
+		Score.ScoreGathered+=Random.Range(100, 500);
 	}
 
 }
