@@ -11,4 +11,8 @@ public class MenuButtons : MonoBehaviour {
 	void toPlay(){
 		Application.LoadLevel ("MainScene");
 	}
+
+	void Quit(){
+		Application.Quit ();
+	}
 }
