@@ -13,11 +13,17 @@ public class ConsumeARainbow : MonoBehaviour {
 	
 	}
 	void OnTriggerEnter( Collider col){
-		rainbowMng.aDumpIsActive = false;
-		GameObject colHit = col.gameObject;
-		colHit.transform.parent = gameObject.transform;
-		Destroy(colHit, 10f);
-		Score.ScoreGathered+=Random.Range(100, 500);
+		if(col.gameObject.layer==8){
+			rainbowMng.aDumpIsActive = false;
+			GameObject colHit = col.gameObject;
+			GameObject basePoint = colHit.transform.parent.gameObject;
+			basePoint.transform.parent = gameObject.transform;
+			basePoint.transform.localPosition = new Vector3();
+			Animator anim = basePoint.GetComponent<Animator>();
+			anim.SetBool("Consume", true);
+			Destroy(basePoint, 10f);
+			Score.ScoreGathered+=Random.Range(100, 500);
+		}
 	}
 
 }

@@ -19,6 +19,7 @@ public class RainbowManager : MonoBehaviour {
 			int i = Random.Range(0, dumps.Length);
 			GameObject newRainPoint = Instantiate (rainbow) as GameObject;
 			newRainPoint.transform.position =  dumps[i].transform.FindChild("RainbowSpawnPoint").position;
+			newRainPoint.name="RainBow";
 			aDumpIsActive = true;
 		}
 	}
