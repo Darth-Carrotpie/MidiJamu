@@ -14,7 +14,7 @@ public class SceneChange : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Score.ScoreGathered > 1000){
+		if(Score.ScoreGathered > 100){
 			sceneInstanceCount++;
 
 			animBcgkImg = GameObject.Find("Canvas").transform.FindChild("Animation Bckg").gameObject;
