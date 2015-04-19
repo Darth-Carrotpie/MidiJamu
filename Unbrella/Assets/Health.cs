@@ -22,7 +22,7 @@ public class Health : MonoBehaviour {
 		textObject = healthText.GetComponent<Text>();
 		textObject.text = "Water: " + health.ToString();
 
-		part = GameObject.Find("Particle System").GetComponent<ParticleSystem> ();
+//		part = GameObject.Find("Particle System").GetComponent<ParticleSystem> ();
 		collisionEvents = new ParticleCollisionEvent[8];
 	}
 	
