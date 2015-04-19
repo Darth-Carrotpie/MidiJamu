@@ -16,7 +16,7 @@ public class UIinteractiveness : MonoBehaviour {
 				Time.timeScale = 1;
 			}else{
 				UiPause.SetActive(true);
-				Time.timeScale = 1;
+				Time.timeScale = 0;
 			}
 		}
 	}
