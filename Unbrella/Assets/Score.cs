@@ -12,6 +12,6 @@ public class Score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = ScoreGathered.ToString();
+		text.text = ScoreGathered.ToString() + " / "+(1000+SceneChange.sceneInstanceCount*200).ToString();
 	}
 }
