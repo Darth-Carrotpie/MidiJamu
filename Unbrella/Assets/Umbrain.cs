@@ -9,9 +9,10 @@ public class Umbrain : MonoBehaviour {
 	public float destroyTimer;
 	public int mapMatrixY;
 	public int mapMatrixX;
-
+	GameObject parentOfUmberllas;
 
 	void Start () {
+		parentOfUmberllas = GameObject.Find("UmberlaParrent") as GameObject;
 		
 	}
 	
@@ -21,6 +22,7 @@ public class Umbrain : MonoBehaviour {
 			timer=0;
 			 
 			GameObject newRainPoint = Instantiate (umbrella, GetRainSpawnPoint(), Quaternion.identity) as GameObject;
+			newRainPoint.transform.parent = parentOfUmberllas.transform;
 			Destroy(newRainPoint, destroyTimer);
 		}
 	}

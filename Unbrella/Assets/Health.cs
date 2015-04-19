@@ -20,7 +20,7 @@ public class Health : MonoBehaviour {
 	void Start () {
 		healthText = GameObject.Find("Health Number");
 		textObject = healthText.GetComponent<Text>();
-		textObject.text = "Tear Capacity: " + health.ToString();
+		textObject.text = "Water: " + health.ToString();
 
 		part = GameObject.Find("Particle System").GetComponent<ParticleSystem> ();
 		collisionEvents = new ParticleCollisionEvent[8];
@@ -32,7 +32,7 @@ public class Health : MonoBehaviour {
 
 		grojikas.PlayOneShot (garsukas);
 		health -= damage;
-		textObject.text = "Health: " + health.ToString();
+		textObject.text = "Water: " + health.ToString();
 		lastHitTime = Time.time;
 	}
 
